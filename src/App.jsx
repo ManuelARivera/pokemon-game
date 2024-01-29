@@ -12,8 +12,7 @@ function App() {
 
   async function getPokemons() {
     const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=251&offset=0");
-    const results  = await response.json();
-
+    const {results}  = await response.json();
     setPokemon(results.map(r => {
       const id = r.url.split('/').at(-2)
 
